@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Meditations Groups</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Datepicker CSS -->
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+     <!-- Custom Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <div class="container">
+
+      <div class="row groupFilters">
+
+        <div class="col-md-12">
+
+          <div class="row meditationLength">
+
+            <div class="col-md-2">
+
+              <p>How Time Do You Have?</p>
+
+            </div>
+
+            <div class="col-md-10">
+
+              <form>
+                <input type="radio" value="5minutes" name="lengthMinutes">5 Minutes
+                <input type="radio" value="10minutes" name="lengthMinutes">10 Minutes
+                <input type="radio" value="15minutes" name="lengthMinutes">15 Minutes
+                <input type="radio" value="20minutesMore" name="lengthMinutes">20+ Minutes
+              </form>
+
+            </div>
+
+          </div> <!-- meditationLength -->
+
+          <div class="row meditationTopic">
+
+            <div class="col-md-2">
+
+              <p>Find A Particular Topic</p>
+
+            </div>
+
+            <div class="col-md-10">
+
+              <input type="text" id="topicSearch" class="form-control" placeholder="Happiness, Laughing, Flow">
+
+            </div>
+
+          </div> <!-- meditationTopic -->
+
+          <div class="row meditationTime">
+
+            <div class="col-md-2">
+
+              <p>Find a Specific Time</p>
+
+            </div>
+
+            <div class="col-md-10">
+
+              <div class="form-group">
+                  <div class='input-group date' id='meditationTimePicker'>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+
+            </div>
+
+          </div> <!-- meditationTime -->
+
+          <div class="row sortOptions">
+
+            <div class="col-md-2">
+
+               <p>Sort Meditations By</p>
+
+            </div>
+
+            <div class="col-md-10">
+
+              <form action="">
+                <input type="checkbox" name="trending" value="trending">Trending Meditations
+                <input type="checkbox" name="startingSoon" value="startingSoon">Starting Soon
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div> <!-- groupFilters -->
+
+      <div class="row meditationContainer">
+
+        <div class="col-md-12">
+
+          <h3>Meditation Track Name</h3>
+
+        </div>
+
+      </div> <!-- meditationContainer -->
+
+      <div class="row meditationContainer">
+
+        <div class="col-md-12">
+
+          <h3>Meditation Track Name</h3>
+
+        </div>
+
+      </div> <!-- meditationContainer -->
+
+      <div class="row meditationContainer">
+
+        <div class="col-md-12">
+
+          <h3>Meditation Track Name</h3>
+
+        </div>
+
+      </div> <!-- meditationContainer -->
+
+      <div class="row meditationContainer">
+
+        <div class="col-md-12">
+
+          <h3>Meditation Track Name</h3>
+
+        </div>
+
+      </div> <!-- meditationContainer -->
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugins to handle date picker functionality -->
+    <script src="js/moment.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript">
+            $(function () {
+                $('#meditationTimePicker').datetimepicker();
+            });
+        </script>
+
+     <!-- Custom Scripts -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
