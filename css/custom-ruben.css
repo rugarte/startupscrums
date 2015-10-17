@@ -1,1 +1,53 @@
-/* My Account */
+/* Navbar */
+
+.navbar-brand {
+	padding: 0 15px;
+	height: 80px; /* Match the height of the logo image */
+}
+
+.mainNav li a {
+	padding: 20px;
+}
+
+.navbar-right a.profile-info {
+	padding: 10px 15px;
+}
+
+.navbar-right a.profile-info span {
+	font-size: 22px;
+}
+
+.navbar-right .glyphicon {
+	font-size: 26px;
+}
+
+.navbar-toggle {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+
+	.profile-info {
+		text-align: center;
+	}
+
+	.dropdown-menu {
+		text-align: center;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+}
