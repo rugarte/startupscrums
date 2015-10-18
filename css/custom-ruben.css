@@ -37,8 +37,12 @@
 	padding: 20px;
 }
 
+.navbar-right img {
+	max-height: 30px;
+}
+
 .navbar-right a.profile-info {
-	padding: 10px 15px;
+	padding: 25px 15px;
 }
 
 .navbar-right a.profile-info span {
