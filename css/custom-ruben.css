@@ -1,5 +1,9 @@
 /* Core */
 
+input[type="checkbox"], input[type="radio"] {
+	margin-right: 10px;
+}
+
 .orange-headline {
 	color: #D37335;
 	font-size: 30px;
@@ -126,6 +130,18 @@
 	color: #D37335 !important;
 	font-size: 22px;
 	font-weight: bold;
+}
+
+/* Topics Page */
+
+.filterRow {
+	margin: 10px 0;
+}
+
+.groupFilters {
+	background-color: #F0D783;
+	padding: 10px 0 5px;
+    margin-bottom: 10px;
 }
 
 /* Chat */
