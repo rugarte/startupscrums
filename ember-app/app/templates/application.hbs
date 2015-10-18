@@ -1,9 +1,19 @@
-<h2>Aware</h2>
-{{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.displayName}}
-  <button {{action 'signOut'}}>Sign out</button>
-{{else}}
-  <button {{action 'signIn' 'twitter'}}>Sign in with Twitter</button>
-{{/if}}
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h2>Aware</h2>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-12'>
+    {{#if session.isAuthenticated}}
+      Logged in as {{session.currentUser.displayName}}
+      <button {{action 'signOut'}} class='btn btn-primary-outline'>Sign out</button>
+    {{else}}
+      <button {{action 'signIn' 'twitter'}}>Sign in with Twitter</button>
+    {{/if}}
+    </div>
+  </div>
 
-{{outlet}}
+  {{outlet}}
+</div>

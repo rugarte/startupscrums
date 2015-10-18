@@ -1,14 +1,22 @@
-{{#if session.currentUser}}
-<button {{action 'checkIn'}}>Check in</button>
-<button {{action 'checkOut'}}>Check out</button>
-{{/if}}
+  <div class='row'>
+    <div class='col-md-12'>
+    {{#if session.currentUser}}
+    <button {{action 'checkIn'}} class='btn btn-primary-outline'>Check in</button>
+    <button {{action 'checkOut'}} class='btn btn-primary-outline'>Check out</button>
+    {{/if}}
 
-<label>Search range (km) {{input type='text' value=rangeInKm placeholder='Range in km'}}</label>
+  <label>Search range (km) {{input type='text' value=rangeInKm placeholder='Range in km'}}</label>
+    </div>
+  </div>
 
 
-<h5>Currently Aware</h5>
-  {{#each onlineUsers as |user|}}
-  <div><img src={{user.profileImageURL}} /></div>
-  {{/each}}
+  <h5>Currently Aware</h5>
+    {{#each onlineUsers as |user|}}
+    <div><img src={{user.profileImageURL}} /></div>
+    {{/each}}
 
-  {{google-map latitude=49.28 longitude=-123.12 radiusInKm=rangeInKm onlineUsers=onlineUsers offlineUsers=offlineUsers activeMarkers=activeMarkers markerCallback=(action 'addMarker')}}
+    <div class='row'>
+      <div class='col-md-12'>
+        {{google-map latitude=49.28 longitude=-123.12 radiusInKm=rangeInKm onlineUsers=onlineUsers offlineUsers=offlineUsers activeMarkers=activeMarkers markerCallback=(action 'addMarker')}}
+      </div>
+    </div>
