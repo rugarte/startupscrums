@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         const firebase = this.get('firebase');
         const usersRef = firebase.child('users');
         const data = {};
-        data[response.uid] = { 
+        data[response.uid] = {
           username: response.currentUser.username,
           profileImageURL: response.currentUser.profileImageURL
         }

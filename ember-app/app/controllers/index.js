@@ -1,4 +1,5 @@
 /* global GeoFire */
+/* global google */
 import Ember from 'ember';
 import ENV from 'ember-app/config/environment';
 import _ from 'lodash/lodash';
@@ -8,55 +9,80 @@ const { computed, inject } = Ember;
 export default Ember.Controller.extend({
   firebase: inject.service(),
   users: {},
+  radius: 1,
+  rangeInKm: 1,
 
-  initGeoFire: Ember.on('init', function() {
+  setup: Ember.on('init', function() {
+    this.initLocation();
+    // this.initGeo();
+    // this._getLocation();
+    // this._initGeoQueryObservers();
+  }),
+
+  initGeo() {
     const firebase = this.get('firebase');
-    const geoFire = new GeoFire(firebase.child('users'));
-    const center = [49.2755547, -123.12144119999999];
+    const geoFire = new GeoFire(firebase.child('geoFireData'));
+    const center = [this.get('latitude'), this.get('longitude')];
     const geoQuery = geoFire.query({
       center: center,
-      radius: 5
+      radius: 1
     });
     this.set('geoQuery', geoQuery);
     this.set('geoFire', geoFire);
-    this._getLocation();
-  }),
+  },
+
+  initLocation() {
+    const success = (location) => {
+      const latitude = location.coords.latitude;
+      const longitude = location.coords.longitude;
+      this.set('longitude', longitude);
+      this.set('latitude', latitude);
+      this.initGeo();
+    };
+
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((location) => success(location));
+    } else {
+      alert('Your browser does not support geolocation')
+    }
+  },
 
   _initGeoQueryObservers() {
     const geoQuery = this.get('geoQuery');
     const users = this.get('users');
     geoQuery.on('key_entered', (userID, userLocation) => {
       users[userID] = { userID: userID, location: userLocation };
-       
+      const latitude = userLocation[0];
+      const longitude = userLocation[1];
+      let marker = 'marker';
+      this.store.findRecord('user', userID).then(value => {
+        debugger;
+        console.log(marker);
+      })
     });
   },
 
-  currentUser: computed('session', function() {
-    const session = this.get('session');
-    return session.currentUser;
-  }),
-
   initializeMap: Ember.on('init', function() {
-
     Ember.run.schedule('afterRender', () => {
       const center = [49.2755547, -123.12144119999999];
       const loc = new google.maps.LatLng(center[0], center[1]);
-      const radiusInKm = 5;
+      const radiusInKm = 1;
 
       // Create the Google Map
       const map = new google.maps.Map(document.getElementById("map-canvas"), {
         center: loc,
-        zoom: 13,
+        zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
+
       this.set('map', map);
 
       // Create a draggable circle centered on the map
-      var circle = new google.maps.Circle({
+      const circle = new google.maps.Circle({
         strokeColor: "#6D3099",
         strokeOpacity: 0.7,
         strokeWeight: 1,
-        fillColor: "#B650FF",
+        fillColor: '#CDDC39',
         fillOpacity: 0.35,
         map: map,
         center: loc,
@@ -77,7 +103,27 @@ export default Ember.Controller.extend({
     });
   }),
 
+  onlineUsers: computed('model.@each.isOnline', function() {
+    const users = this.get('model');
+    return users.filterBy('isOnline', true);
+  }),
+
+  offlineUsers: computed('model.@each.isOnline', function() {
+    const users = this.get('model');
+    return users.filterBy('isOnline', false);
+  }),
+
+  activeMarkers: {},
+
   actions: {
+    updateGeoQuery() {
+    },
+
+    addMarker(user, marker) {
+      const markers = this.get('activeMarkers');
+      markers[user] = marker;
+    },
+
     checkIn() {
       const userId = this.get('session.uid');
       const longitude = this.get('longitude');
@@ -90,6 +136,7 @@ export default Ember.Controller.extend({
         user.set('uid', userId);
         user.set('latitude', latitude);
         user.set('longitude', longitude);
+        user.set('isOnline', true);
         user.save();
         this._createUserMarker(user);
       });
@@ -97,6 +144,10 @@ export default Ember.Controller.extend({
 
     checkOut() {
       const userId = this.get('session.uid');
+      this.store.findRecord('user', userId).then(user => {
+        user.set('isOnline', false);
+        user.save();
+      });
       const firebaseRef = this.get('firebase').child('geoFireData');
       firebaseRef.child(userId).remove();
     }
@@ -149,6 +200,17 @@ export default Ember.Controller.extend({
     });
 
     marker.setMap(map);
+  },
+
+  _createMarker(id, imageURL, latitude, longitude ) {
+    const map = this.get('map');
+    const marker = new google.maps.Marker({
+      icon: imageURL,
+      position: new google.maps.LatLng(latitude, longitude),
+      optimized: true,
+      map: map
+    });
+
     return marker;
   }
 });

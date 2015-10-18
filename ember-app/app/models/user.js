@@ -5,5 +5,6 @@ export default DS.Model.extend({
   username: DS.attr(),
   latitude: DS.attr(),
   longitude: DS.attr(),
-  profileImageURL: DS.attr()
+  profileImageURL: DS.attr(),
+  isOnline: DS.attr()
 });

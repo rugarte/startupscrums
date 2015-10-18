@@ -1,4 +1,9 @@
-#map-canvas {
+#map-canvas,
+.map-canvas {
   height: 500px;
   width: 900px;
+}
+
+.avatar-container {
+  display: flex;
 }

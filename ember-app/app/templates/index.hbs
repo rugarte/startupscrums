@@ -1,4 +1,14 @@
-<div id="map-canvas"></div>
-
+{{#if session.currentUser}}
 <button {{action 'checkIn'}}>Check in</button>
 <button {{action 'checkOut'}}>Check out</button>
+{{/if}}
+
+<label>Search range (km) {{input type='text' value=rangeInKm placeholder='Range in km'}}</label>
+
+
+<h5>Currently Aware</h5>
+  {{#each onlineUsers as |user|}}
+  <div><img src={{user.profileImageURL}} /></div>
+  {{/each}}
+
+  {{google-map latitude=49.28 longitude=-123.12 radiusInKm=rangeInKm onlineUsers=onlineUsers offlineUsers=offlineUsers activeMarkers=activeMarkers markerCallback=(action 'addMarker')}}
