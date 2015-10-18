@@ -1,5 +1,9 @@
 /* Core */
 
+input[type="checkbox"], input[type="radio"] {
+	margin-right: 10px;
+}
+
 .orange-headline {
 	color: #D37335;
 	font-size: 30px;
@@ -31,6 +35,12 @@
 .navbar-brand {
 	padding: 0;
 	height: 80px; /* Match the height of the logo image */
+}
+
+.navbar-brand img {
+	height: 50px;
+	margin-top: 10px;
+	margin-right: 15px;
 }
 
 .mainNav li a {
@@ -84,6 +94,16 @@
     }
 }
 
+.nav-icon  a {
+	padding: 24px 10px !important;
+}
+
+/* Home */
+
+.jumbo-subtitle {
+	color: #FFF;
+}
+
 /* Individual Session */
 
 .session-info {
@@ -120,6 +140,26 @@
 	color: #D37335 !important;
 	font-size: 22px;
 	font-weight: bold;
+}
+
+.individual-session {
+	background-image: url("../img/hiking.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+}
+
+/* Topics Page */
+
+.filterRow {
+	margin: 10px 0;
+}
+
+.groupFilters {
+	background-color: #F0D783;
+	padding: 10px 0 5px;
+    margin-bottom: 10px;
 }
 
 /* Chat */

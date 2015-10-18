@@ -27,11 +27,59 @@
     
     <div class="container">
 
-      <div class="row groupFilters">
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Aware Logo"></a>
+        </div>
 
-        <div class="col-md-12">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="mobile-nav">
 
-          <div class="row meditationLength">
+          <ul class="nav navbar-nav mainNav">
+
+            <li class="text-center"><a href="#"><span>Find</span><br>your mindful journey</a></li>
+            <li class="text-center"><a href="#"><span>Start</span><br>a new group</a></li>
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle profile-info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://placehold.it/60x60" alt="Profile Image" class="img-circle"> <span>John</span> <span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+                <li><a href="#">upcoming events</a></li>
+                <li><a href="#">groups</a></li>
+                <li><a href="#">my analytics</a></li>
+                <li><a href="#">edit profile</a></li>
+                <li><a href="#">invite friends</a></li>
+                <li><a href="#">settings</a></li>
+                <li><a href="#">logout</a></li>
+              </ul>
+
+            </li>
+
+            <li class="text-center nav-icon"><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+
+             <li class="text-center nav-icon"><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+      <div class="">
+
+        <div class="groupFilters">
+
+          <div class="row meditationLength filterRow">
 
             <div class="col-md-2">
 
@@ -52,7 +100,7 @@
 
           </div> <!-- meditationLength -->
 
-          <div class="row meditationTopic">
+          <div class="row meditationTopic filterRow">
 
             <div class="col-md-2">
 
@@ -68,7 +116,7 @@
 
           </div> <!-- meditationTopic -->
 
-          <div class="row meditationTime">
+          <div class="row meditationTime filterRow">
 
             <div class="col-md-2">
 
@@ -91,7 +139,7 @@
 
           </div> <!-- meditationTime -->
 
-          <div class="row sortOptions">
+          <div class="row sortOptions filterRow">
 
             <div class="col-md-2">
 
@@ -116,43 +164,32 @@
 
       <div class="row meditationContainer">
 
-        <div class="col-md-12">
+        <div class="col-md-4">
 
+          <img src="img/happy.jpg" width="300">
           <h3>Meditation Track Name</h3>
+          <h4>Track Sub-Title</h4>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <img src="img/friends.jpg" width="300">
+          <h3>Meditation Track Name</h3>
+          <h4>Track Sub-Title</h4>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <img src="img/exercise.jpg" width="300">
+          <h3>Meditation Track Name</h3>
+          <h4>Track Sub-Title</h4>
 
         </div>
 
       </div> <!-- meditationContainer -->
 
-      <div class="row meditationContainer">
-
-        <div class="col-md-12">
-
-          <h3>Meditation Track Name</h3>
-
-        </div>
-
-      </div> <!-- meditationContainer -->
-
-      <div class="row meditationContainer">
-
-        <div class="col-md-12">
-
-          <h3>Meditation Track Name</h3>
-
-        </div>
-
-      </div> <!-- meditationContainer -->
-
-      <div class="row meditationContainer">
-
-        <div class="col-md-12">
-
-          <h3>Meditation Track Name</h3>
-
-        </div>
-
-      </div> <!-- meditationContainer -->
 
     </div>
 
