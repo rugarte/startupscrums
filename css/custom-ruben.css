@@ -1,7 +1,35 @@
+/* Core */
+
+.orange-headline {
+	color: #D37335;
+	font-size: 30px;
+}
+
+.timer {
+	color: #53ACBC;
+	font-size: 40px;
+}
+
+.panel-heading {
+	background-color: #F0D783 !important;
+	color: #515151 !important;
+	font-size: 19px !important;
+}
+
+.panel-body {
+	background-color: #e5e3dd !important;
+}
+
 /* Navbar */
 
+.navbar {
+	background-color: #FFF;
+	border: none;
+	margin-bottom: 0;
+}
+
 .navbar-brand {
-	padding: 0 15px;
+	padding: 0;
 	height: 80px; /* Match the height of the logo image */
 }
 
@@ -50,6 +78,44 @@
     .navbar-header {
         float:none;
     }
+}
+
+/* Individual Session */
+
+.session-info {
+	background-color: #F0D783;
+	padding-top: 45px;
+	margin-bottom: 10px;
+}
+
+.session-title {
+	font-size: 35px;
+	font-weight: normal;
+}
+
+.session-description {
+	font-size: 30px;
+	font-weight: 300;
+}
+
+.session-sharing {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.timerContainer {
+	min-height: 280px;
+    padding: 67px 0;
+}
+
+.sessionSignUp {
+	margin:18px 0;
+}
+
+.debrief-link {
+	color: #D37335 !important;
+	font-size: 22px;
+	font-weight: bold;
 }
 
 /* Chat */

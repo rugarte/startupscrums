@@ -22,6 +22,7 @@
     <![endif]-->
   </head>
   <body>
+
    <div class="container">
    
     <nav class="navbar navbar-default">
@@ -72,25 +73,31 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <h1>Individual Meditation Page</h1>
-    <div class="map-filler pull-right">
-      <span>Map</span>
+    <div class="session-info text-center">
+
+      <h1 class="session-title">Meditation Session Title</h1>
+      <p class="session-description">Session Info description here.</p>
+
+      <p class="session-sharing">Share This Session: </p>
+
     </div>
+  
     
     <div class="row">
 
       <div class="col-md-9">
 
-        <h2 class="sessionStartTimer">Session Will Start In: <span value="1445130683000"></span> 
-        </h2>
+        <h3 class="orange-headline">23 of 456 have signed up for this session!</h3>
 
-        <h2 class="sessionEndTimer hidden">Session Will End In:<span value="1445130916000"></span> 
-        </h2>
+        <div class="timerContainer">
 
-      <h2>Social Media/Share</h2>
+          <h2 class="timer sessionStartTimer">Session Will Start In: <span value="1445130683000"></span> 
+          </h2>
 
-    <div class="row">
-     <div class="col-md-9">
+          <h2 class="timer sessionEndTimer hidden">Session Will End In: <span value="1445130916000"></span> 
+          </h2>
+
+        </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -104,11 +111,25 @@
         </div>
       </div>
 
-   </div>
+    </div>
 
    <div class="col-md-3">
-     <h3>About the group</h3>
-     <p>Dummy Content.</p>
+
+    <button class="btn btn-success btn-block sessionSignUp">SIGN UP</button>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20824.26022638255!2d-123.12630685!3d49.275780850000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1445139598196" width="264" height="264" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+     <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Group Info</h3>
+        </div>
+        <div class="panel-body">
+          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+        
+        </div>
+      </div>
+
    </div>
 
  </div> <!-- row -->
@@ -116,7 +137,7 @@
    <div class="row">
 
      <div class="col-md-6">
-       <a href="debrief.html"><h2>Link to Debrief</h2></a>
+       <a class="debrief-link" href="debrief.html">Session Debrief...</a>
      </div>
 
    </div>
