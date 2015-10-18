@@ -85,12 +85,12 @@
     color: #777777;
 }
 
-.panel .slidedown .glyphicon, .chat .glyphicon
+.debrief-chat .panel .slidedown .glyphicon, .chat .glyphicon
 {
     margin-right: 5px;
 }
 
-.panel-body
+.debrief-chat .panel-body
 {
     overflow-y: scroll;
     height: 400px;
