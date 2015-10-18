@@ -4,8 +4,21 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-app',
     environment: environment,
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      // 'script-src': "'self' 'unsafe-eval' https://cdn.firebase.com https://maps.googleapis.com",
+      'script-src': "* 'unsafe-eval'",
+      'img-src': "*",
+      'font-src': "*",
+      'style-src': "* 'unsafe-inline",
+      'frame-src': "'self'"
+    },
+    firebase: 'https://startupscrums.firebaseio.com',
     baseURL: '/',
     locationType: 'auto',
+    torii: {
+      sessionServiceName: 'session'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
