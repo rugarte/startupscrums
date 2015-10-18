@@ -91,69 +91,18 @@
 
     <div class="row">
      <div class="col-md-9">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Content
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+        </div>
+        <div class="panel-body">
+          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
                 <span>
                   <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/228875060&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                 </span>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Before Tracking Questions
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-              <div class="panel-body">
-                <form class="form-group">
-                  <label for="afterMood">Desribe your Mood.</label>
-                  <input type="text" label="afterMood" class="form-control">
-                  <label for="afterCalmRating">On a scale of 1 to 10, how calm do you feel?</label>
-                  <input type="number" label="afterCalmRating" min="1" max="10" class="form-control">
-                  <label for="afterCloseRating">On a scale of 1 to 10, how close to other people do you feel?</label>
-                  <input type="number" label="afterCloseRating" min="1" max="10" class="form-control">
-                  <button class="btn btn-success">Enter</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                  After Tracking Quesitons
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-                <form class="form-group">
-                  <label for="afterMood">Desribe your Mood.</label>
-                  <input type="text" label="afterMood" class="form-control">
-                  <label for="afterCalmRating">On a scale of 1 to 10, how calm do you feel?</label>
-                  <input type="number" label="afterCalmRating" min="1" max="10" class="form-control">
-                  <label for="afterCloseRating">On a scale of 1 to 10, how close to other people do you feel?</label>
-                  <input type="number" label="afterCloseRating" min="1" max="10" class="form-control">
-                  <button class="btn btn-success">Enter</button>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
 
    </div>
 
@@ -164,8 +113,12 @@
 
  </div> <!-- row -->
 
-   <div class="col-md-6">
-     <a href="debrief.html"><h2>Link to Debrief</h2></a>
+   <div class="row">
+
+     <div class="col-md-6">
+       <a href="debrief.html"><h2>Link to Debrief</h2></a>
+     </div>
+
    </div>
 
 </div> <!-- row -->
@@ -179,11 +132,21 @@
             <h4 class="modal-title" id="sessionQuestionsLabel">Pre-Session Questions</h4>
           </div>
           <div class="modal-body">
-            ...
+
+            <form class="form-group">
+                  <label for="afterMood">Desribe your Mood.</label>
+                  <input type="text" label="afterMood" class="form-control">
+                  <label for="afterCalmRating">On a scale of 1 to 10, how calm do you feel?</label>
+                  <input type="number" label="afterCalmRating" min="1" max="10" class="form-control">
+                  <label for="afterCloseRating">On a scale of 1 to 10, how close to other people do you feel?</label>
+                  <input type="number" label="afterCloseRating" min="1" max="10" class="form-control">
+                  <button class="btn btn-success">Enter</button>
+            </form>
+
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary closeModal">Save changes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -198,11 +161,21 @@
             <h4 class="modal-title" id="sessionEndQuestionsLabel">Session Has Ended</h4>
           </div>
           <div class="modal-body">
-            ...
+
+            <form class="form-group">
+                  <label for="afterMood">Desribe your Mood.</label>
+                  <input type="text" label="afterMood" class="form-control">
+                  <label for="afterCalmRating">On a scale of 1 to 10, how calm do you feel?</label>
+                  <input type="number" label="afterCalmRating" min="1" max="10" class="form-control">
+                  <label for="afterCloseRating">On a scale of 1 to 10, how close to other people do you feel?</label>
+                  <input type="number" label="afterCloseRating" min="1" max="10" class="form-control">
+                  <button class="btn btn-success">Enter</button>
+            </form>
+
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary closeModal">Save changes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
