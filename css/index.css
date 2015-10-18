@@ -3,7 +3,6 @@
 }
 
 .jumbotron {
-  padding-top: 350px;
   color:white;
   position: relative;
   background: #000 url("../img/banner.jpeg") center center!important;
@@ -19,4 +18,20 @@
 .image-filler{
   background-color: grey;
   height:150px;
+}
+
+.jumbo-padding{
+  padding-top: 350px;
+}
+
+.nav-link{
+  font-size: 18px;
+}
+
+.nav-link a {
+  color: black;
+}
+
+.margin-right {
+  margin-right: 5px;
 }
