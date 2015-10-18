@@ -24,12 +24,60 @@
     
     <div class="container debrief">
 
+        <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Aware Logo"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="mobile-nav">
+
+          <ul class="nav navbar-nav mainNav">
+
+            <li class="text-center"><a href="#"><span>Find</span><br>your mindful journey</a></li>
+            <li class="text-center"><a href="#"><span>Start</span><br>a new group</a></li>
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle profile-info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://placehold.it/60x60" alt="Profile Image" class="img-circle"> <span>John</span> <span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+                <li><a href="#">upcoming events</a></li>
+                <li><a href="#">groups</a></li>
+                <li><a href="#">my analytics</a></li>
+                <li><a href="#">edit profile</a></li>
+                <li><a href="#">invite friends</a></li>
+                <li><a href="#">settings</a></li>
+                <li><a href="#">logout</a></li>
+              </ul>
+
+            </li>
+
+            <li class="text-center"><a href="#"><span>message</span><br><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+
+             <li class="text-center"><a href="#"><span>help</span><br><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
       <div class="row">
 
         <div class="col-md-12">
 
           <div class="page-header">
-            <h1>Meditation Debrief <small>Subtext for header</small></h1>
+            <h1>Session Debrief </h1>
           </div>
           
         </div>
@@ -46,7 +94,9 @@
            <h2>2. Any other thoughts or comments?</h2>
           <textarea class="form-control" rows="4"></textarea>
 
-          <button class="btn btn-primary btn-lg">Save Answers</button>
+          <br>
+
+          <button class="btn btn-success btn-lg">Save Answers</button>
 
         </div>
 
@@ -159,18 +209,104 @@
 
       </div> <!-- row -->
 
-      
+      <div class="row">
 
-      
+         <div class="col-md-12">
 
+          <div class="page-header">
+            <h1>Session Analytics</h1>
+          </div>
+          
+        </div>
+
+
+        <div class="col-md-6 col-sm-6 col-lg-6 text-center chartContainer">
+
+          <h4>Total Time (Mins) Spent Meditating in the Last 7 Days</h4>
+
+          <canvas id="totalTimeInMinutes" width="400" height="200"></canvas>
+
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-lg-6 text-center chartContainer">
+
+          <h4>Mood Scores Against Total Time Spent Meditating</h4>
+
+          <canvas id="moodVersusTotalTime" width="400" height="200"></canvas>
+
+        </div>
+
+      </div>
       
 
     </div> <!-- container -->
+
+     <script>
+
+      var totalTimeInMinutesData = {
+        labels : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        datasets : [
+          {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data : [13, 17, 5, 8, 9, 10, 11]
+          }
+        ]
+
+      }
+
+      var moodVersusTotalTimeData = {
+        labels : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        datasets : [
+          {
+            label: "Total Time Meditating",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [13, 17, 5, 8, 9, 10, 11]
+        },
+        {
+            label: "Mood Scores",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [7, 9, 2, 3, 4, 7, 9]
+        }
+        ]
+
+      }
+
+      window.onload = function(){
+
+        var chart1 = document.getElementById("totalTimeInMinutes").getContext("2d");
+        window.myBar = new Chart(chart1).Bar(totalTimeInMinutesData, {
+          responsive : true
+        });
+
+        var chart2 = document.getElementById("moodVersusTotalTime").getContext("2d");
+        window.myBar = new Chart(chart2).Line(moodVersusTotalTimeData, {
+          responsive : true
+        });
+
+      }
+
+  </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- ChartJS File -->
+    <script src="js/Chart.js"></script>
 
      <!-- Custom Scripts -->
     <script src="js/scripts.js"></script>
